@@ -1,9 +1,11 @@
-[gd_scene format=3 uid="uid://b418k450v168p"]
+[gd_scene format=3 uid="uid://c31ujkw06p2j2"]
 
-[ext_resource type="PackedScene" uid="uid://bxjmuj85pmqjc" path="res://player.tscn" id="1_3hls8"]
-[ext_resource type="Script" uid="uid://btou1mvhvkcm3" path="res://trap_spawner.gd" id="2_hn12h"]
-[ext_resource type="PackedScene" uid="uid://bhr4d0grkkkdy" path="res://spike_trap.tscn" id="3_ihfcg"]
-[ext_resource type="Script" uid="uid://c6his34qfep7i" path="res://finish_line.gd" id="4_ihfcg"]
+[ext_resource type="PackedScene" uid="uid://tum2vaqdekko" path="res://scenes/player.tscn" id="1_3hls8"]
+[ext_resource type="Script" uid="uid://c6his34qfep7i" path="res://scripts/finish_line.gd" id="2_5xbjy"]
+[ext_resource type="Script" uid="uid://btou1mvhvkcm3" path="res://scripts/trap_spawner.gd" id="3_5xbjy"]
+[ext_resource type="PackedScene" uid="uid://bhr4d0grkkkdy" path="res://scenes/spike_trap.tscn" id="4_fcfvj"]
+[ext_resource type="Script" uid="uid://clrnuiykk2ad4" path="res://scripts/coin_spawner.gd" id="5_5hph3"]
+[ext_resource type="PackedScene" uid="uid://cp4306oxjf3fy" path="res://scenes/coin.tscn" id="6_j7kpp"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_hn12h"]
 
@@ -19,6 +21,9 @@ albedo_color = Color(0, 1, 0, 1)
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=402514679]
 
+[node name="Player" parent="." unique_id=1923380164 instance=ExtResource("1_3hls8")]
+transform = Transform3D(0.9999999, 0, 0, 0, 0.9999999, 0, 0, 0, 1, 0, 1.1920929e-07, 90)
+
 [node name="Floor" type="CSGBox3D" parent="." unique_id=856805384]
 use_collision = true
 size = Vector3(10, 1, 200)
@@ -31,7 +36,7 @@ shape = SubResource("BoxShape3D_hn12h")
 
 [node name="FinishLine" type="Area3D" parent="." unique_id=1198270833]
 transform = Transform3D(10, 0, 0, 0, 5, 0, 0, 0, 1, 0, 1, -90)
-script = ExtResource("4_ihfcg")
+script = ExtResource("2_5xbjy")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="FinishLine" unique_id=1610463660]
 transform = Transform3D(10, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
@@ -61,10 +66,11 @@ theme_override_font_sizes/font_size = 48
 text = "\"LEVEL 1 CLEARED!\""
 
 [node name="TrapSpawner" type="Node3D" parent="." unique_id=88207472]
-script = ExtResource("2_hn12h")
-trap_scene = ExtResource("3_ihfcg")
+script = ExtResource("3_5xbjy")
+trap_scene = ExtResource("4_fcfvj")
 
-[node name="Player" parent="." unique_id=1923380164 instance=ExtResource("1_3hls8")]
-transform = Transform3D(0.9999999, 0, 0, 0, 0.9999999, 0, 0, 0, 1, 0, 1.1920929e-07, 90)
+[node name="CoinSpawner" type="Node3D" parent="." unique_id=234242050]
+script = ExtResource("5_5hph3")
+coin_scene = ExtResource("6_j7kpp")
 
 [connection signal="body_entered" from="FinishLine" to="FinishLine" method="_on_body_entered"]

@@ -1,6 +1,6 @@
-[gd_scene format=3 uid="uid://cgni0hgdlrnyf"]
+[gd_scene format=3 uid="uid://bteqwyc30xm5i"]
 
-[ext_resource type="Script" uid="uid://ecb8r1gpnedr" path="res://spike_trap.gd" id="1_mg04e"]
+[ext_resource type="Script" uid="uid://ctlk0im51tlkb" path="res://scripts/spike_trap.gd" id="1_mg04e"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fkc1t"]
 albedo_color = Color(1, 0, 0, 1)

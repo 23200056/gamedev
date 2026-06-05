@@ -7,6 +7,6 @@ func _on_body_entered(body: Node3D) -> void:
 		body.forward_speed = 0 
 		body.velocity = Vector3.ZERO
 		
-		await get_tree().create_timer(1.5).timeout
+		await get_tree().create_timer(2).timeout
 		
-		get_tree().change_scene_to_file("res://level_2.tscn")
+		get_tree().change_scene_to_file("res://scenes/level_2.tscn")
