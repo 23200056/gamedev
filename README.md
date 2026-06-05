@@ -7,7 +7,7 @@ This repository contains a series of incremental game development activities bui
 - **Objective:** Establish engine familiarity and version control.
 - **Details:** A basic Godot scene containing a `Label` node that displays "hello world". A GDScript is attached using the `_process(delta)` function to continuously update its X-axis position.
 - **Screenshot:**
-  ![Week 1](week1_moving_node.png)
+  ![Week 1](assets/week1_moving_node.png)
 
 ## Week 2: Gameplay Mechanics & Level Design
 
@@ -17,9 +17,9 @@ This repository contains a series of incremental game development activities bui
   - **Level 2:** Noticeably harder, triggered via a scene transition with an on-screen notification.
   - **Hazards:** Implemented traps using Area nodes. The game features no HP; colliding with a trap triggers an immediate scene reload.
 - **Screenshot:**
-  ![Week 2](week2_level_design_1.png)
-  (week2_level_design_2.png)
-  (week2_level_design_3.png)
+  ![Week 2 Gameplay 1](assets/week2_level_design_1.png)
+  ![Week 2 Gameplay 2](assets/week2_level_design_2.png)
+  ![Week 2 Gameplay 3](assets/week2_level_design_3.png)
 
 ## Week 3: UI/UX, Audio, and AI
 
