@@ -1,6 +1,6 @@
 # Game Development
 
-This repository contains a series of incremental game development activities built in the Godot Engine, progressing from basic scenes to a multi-level game prototype with AI, UI, and 3D optimization.
+This repository contains a series of incremental game development activities built in the Godot Engine, progressing from basic scenes to a multi-level game prototype featuring custom animations, audio, and minimal UI.
 
 ## Week 1: Simple Scene with a Moving Node
 
@@ -21,15 +21,10 @@ This repository contains a series of incremental game development activities bui
   ![Week 2 Gameplay 2](assets/week2_level_design_2.png)
   ![Week 2 Gameplay 3](assets/week2_level_design_3.png)
 
-## Week 3: UI/UX, Audio, and AI
+## Week 3: Animations, Audio, & Minimal UI
 
-- **UI/UX & Audio:** Integrated a `CanvasLayer` HUD for persistent on-screen elements. Configured audio buses to mix background music and sound effects (walk, run, slash, death).
+- **Animations:** Replaced placeholder meshes with a rigged 3D humanoid model. Implemented dynamic animation states (sprinting, jumping, falling) that blend and transition based on physics constraints, player input, and vertical velocity.
+- **Audio:** Integrated basic sound effects for gameplay events (e.g., object collection) using `AudioStreamPlayer`, managing node lifecycle to ensure sounds complete before objects are removed.
+- **UI:** Integrated a minimal HUD with a basic persistent score counter to track collected objects globally across scenes.
 - **Screenshot:**
-  ![Week 3](week3_ui_audio_anims.png)
-
-## Week 4: 3D Basics & Optimization
-
-- **Objective:** 3D implementation and performance profiling.
-- **Details:** Utilization of 3D nodes (meshes, cameras) and `DirectionalLight`. The project was profiled using Godot's built-in debugger tools to ensure a stable 60 FPS output.
-- **Screenshot:**
-  ![Week 4](week4_3d_optimization.png)
+  ![Week 3](assets/week3_ui_audio_anims.png)
