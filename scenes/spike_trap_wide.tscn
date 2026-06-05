@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://cgni0hgdlrnyf"]
+
+[ext_resource type="Script" uid="uid://ecb8r1gpnedr" path="res://spike_trap.gd" id="1_mg04e"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fkc1t"]
+albedo_color = Color(1, 0, 0, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_w2bc5"]
+
+[node name="SpikeTrap" type="Area3D" unique_id=671082726]
+script = ExtResource("1_mg04e")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="." unique_id=77410052]
+size = Vector3(5, 1, 1)
+material = SubResource("StandardMaterial3D_fkc1t")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=909334748]
+transform = Transform3D(5, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+shape = SubResource("BoxShape3D_w2bc5")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://gyv8ncbkiks"
-path="res://.godot/imported/week1_moving_node.png-4fed3ecf2ce105a3b970b42d6e7f3e0b.ctex"
+path="res://.godot/imported/week1_moving_node.png-02b29e4012c5433b2597f24330225b42.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://week1_moving_node.png"
-dest_files=["res://.godot/imported/week1_moving_node.png-4fed3ecf2ce105a3b970b42d6e7f3e0b.ctex"]
+source_file="res://assets/week1_moving_node.png"
+dest_files=["res://.godot/imported/week1_moving_node.png-02b29e4012c5433b2597f24330225b42.ctex"]
 
 [params]
 

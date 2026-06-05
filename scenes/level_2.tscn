@@ -1,0 +1,54 @@
+[gd_scene format=3 uid="uid://dl5xfb4uffpb"]
+
+[ext_resource type="Script" uid="uid://c3scj4dccki6e" path="res://finish_line_end.gd" id="1_1y8me"]
+[ext_resource type="PackedScene" uid="uid://bxjmuj85pmqjc" path="res://player.tscn" id="1_nmjpi"]
+[ext_resource type="Script" uid="uid://btou1mvhvkcm3" path="res://trap_spawner.gd" id="3_1y8me"]
+[ext_resource type="PackedScene" uid="uid://cgni0hgdlrnyf" path="res://spike_trap_wide.tscn" id="3_n7ypv"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_n7ypv"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_1y8me"]
+size = Vector3(30, 20, 5)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_n7ypv"]
+albedo_color = Color(0, 1, 0, 1)
+
+[node name="Level_1" type="Node3D" unique_id=391395719]
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1053822367]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=402514679]
+
+[node name="Floor" type="CSGBox3D" parent="." unique_id=896253421]
+use_collision = true
+size = Vector3(10, 1, 400)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Floor" unique_id=1541190341]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Floor/StaticBody3D" unique_id=1840369682]
+transform = Transform3D(10, 0, 0, 0, 1, 0, 0, 0, 400, 0, 0, 0)
+shape = SubResource("BoxShape3D_n7ypv")
+
+[node name="FinishLine" type="Area3D" parent="." unique_id=1984512059]
+transform = Transform3D(10, 0, 0, 0, 5, 0, 0, 0, 1, 0, 1, -90)
+script = ExtResource("1_1y8me")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="FinishLine" unique_id=404984701]
+transform = Transform3D(10, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+shape = SubResource("BoxShape3D_1y8me")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="FinishLine" unique_id=1365895353]
+size = Vector3(30, 20, 5)
+material = SubResource("StandardMaterial3D_n7ypv")
+
+[node name="TrapSpawner" type="Node3D" parent="." unique_id=946386951]
+script = ExtResource("3_1y8me")
+trap_scene = ExtResource("3_n7ypv")
+trap_count = 20
+spacing_z = 8.0
+
+[node name="Player" parent="." unique_id=1923380164 instance=ExtResource("1_nmjpi")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 90)
+forward_speed = 12.0
+
+[connection signal="body_entered" from="FinishLine" to="FinishLine" method="_on_body_entered"]
