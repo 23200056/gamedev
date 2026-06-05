@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://5yg4x14oa5nw"]
 
 [ext_resource type="PackedScene" uid="uid://tum2vaqdekko" path="res://scenes/player.tscn" id="1_nmjpi"]
+[ext_resource type="Script" uid="uid://cmhe5a1b4iecm" path="res://scripts/level_2.gd" id="1_y0kc7"]
 [ext_resource type="Script" uid="uid://c3scj4dccki6e" path="res://scripts/finish_line_end.gd" id="2_wo48x"]
 [ext_resource type="PackedScene" uid="uid://bteqwyc30xm5i" path="res://scenes/spike_trap_wide.tscn" id="3_n7ypv"]
 [ext_resource type="Script" uid="uid://btou1mvhvkcm3" path="res://scripts/trap_spawner.gd" id="3_wo48x"]
@@ -15,7 +16,8 @@ size = Vector3(30, 20, 5)
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_n7ypv"]
 albedo_color = Color(0, 1, 0, 1)
 
-[node name="Level_1" type="Node3D" unique_id=391395719]
+[node name="Level_2" type="Node3D" unique_id=391395719]
+script = ExtResource("1_y0kc7")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1053822367]
 

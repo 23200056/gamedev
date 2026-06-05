@@ -2,6 +2,8 @@
 
 [ext_resource type="Script" uid="uid://dwdbvmdd8o1u7" path="res://scripts/player.gd" id="1_4flbx"]
 [ext_resource type="PackedScene" uid="uid://cpl5tskcfo3ns" path="res://assets/UAL1_Standard.glb" id="2_g2els"]
+[ext_resource type="Script" uid="uid://cp3owhkl1asmh" path="res://scripts/hud.gd" id="2_qhqgy"]
+[ext_resource type="PackedScene" uid="uid://0xy63f2lfcxl" path="res://scenes/pause_menu.tscn" id="3_dqkch"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_i3pqv"]
 
@@ -15,12 +17,15 @@ shape = SubResource("CapsuleShape3D_i3pqv")
 transform = Transform3D(1, 0, 0, 0, 0.9659258, 0.25881904, 0, -0.25881904, 0.9659258, 0, 2.5, 4)
 
 [node name="HUD" type="CanvasLayer" parent="." unique_id=410968245]
+script = ExtResource("2_qhqgy")
 
 [node name="ScoreLabel" type="Label" parent="HUD" unique_id=959956699]
-offset_right = 40.0
-offset_bottom = 23.0
+offset_right = 136.0
+offset_bottom = 50.0
 theme_override_font_sizes/font_size = 36
 text = "Score: 0"
+
+[node name="PauseMenu" parent="HUD" unique_id=93239657 instance=ExtResource("3_dqkch")]
 
 [node name="UAL1_Standard" parent="." unique_id=1908340032 instance=ExtResource("2_g2els")]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0, 0)

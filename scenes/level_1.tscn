@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://c31ujkw06p2j2"]
 
 [ext_resource type="PackedScene" uid="uid://tum2vaqdekko" path="res://scenes/player.tscn" id="1_3hls8"]
+[ext_resource type="Script" uid="uid://du2thvvhv8al3" path="res://scripts/level_1.gd" id="1_pa8r4"]
 [ext_resource type="Script" uid="uid://c6his34qfep7i" path="res://scripts/finish_line.gd" id="2_5xbjy"]
 [ext_resource type="Script" uid="uid://btou1mvhvkcm3" path="res://scripts/trap_spawner.gd" id="3_5xbjy"]
 [ext_resource type="PackedScene" uid="uid://bhr4d0grkkkdy" path="res://scenes/spike_trap.tscn" id="4_fcfvj"]
@@ -16,6 +17,7 @@ size = Vector3(30, 20, 5)
 albedo_color = Color(0, 1, 0, 1)
 
 [node name="Level_1" type="Node3D" unique_id=391395719]
+script = ExtResource("1_pa8r4")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1053822367]
 
@@ -48,7 +50,7 @@ material = SubResource("StandardMaterial3D_ihfcg")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="FinishLine" unique_id=1941243401]
 
-[node name="Label" type="Label" parent="FinishLine/CanvasLayer" unique_id=1166520936]
+[node name="ClearedLabel" type="Label" parent="FinishLine/CanvasLayer" unique_id=1166520936]
 visible = false
 anchors_preset = 8
 anchor_left = 0.5
