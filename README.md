@@ -25,7 +25,7 @@ This repository contains a series of incremental game development activities bui
 
 - **UI/UX & Audio:** Integrated a `CanvasLayer` HUD for persistent on-screen elements. Configured audio buses to mix background music and sound effects (walk, run, slash, death).
 - **Screenshot:**
-  ![Week 3](week3_ui_audio_anims.png)
+  ![Week 3](assets/week3_ui_audio_anims.png)
 
 ## Week 4: 3D Basics & Optimization
 
